@@ -13,7 +13,7 @@ public class TestController
 	@RequestMapping(value="/test", method=RequestMethod.GET)
     public String greetingForm(Model model) {
         model.addAttribute("test", "test");
-        return "test";
+        return "index";
     }
 
     
