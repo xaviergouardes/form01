@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
     <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
     <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>Bootstrap 101 Template</title>
+    <title>P-Form</title>
 
     <!-- Bootstrap -->
     <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
@@ -19,7 +19,11 @@
   </head>
   <body>
 
-	<div class="container">
+	<div th:replace="templates/fragments/header :: header">
+		Header
+	</div>
+
+	<!-- div class="container">
 	
 		<div class="row">
 		
@@ -68,7 +72,7 @@
 		
 		</nav>
 		
-	</div>
+	</div -->
 	
 	<div class="container" id="content">
 		<h2>Liste de Lots Test A</h2>
@@ -80,19 +84,46 @@
 				
 			  <div class="form-group">
 			  
-			    <label for="domaineProfessionnel" class="col-md-2 control-label">Domaine Professionnel</label>
-			    <div class="col-md-2">
-			      <input type="text" class="form-control" id="domaineProfessionnel" placeholder="Text input" />
+			    <label for="domaineProfessionnel" class="col-md-1 control-label">Domaine Professionnel</label>
+			    <div class="col-md-3">
+					<select class="form-control" id="domaineProfessionnel">
+						<option value=""></option>
+						<option value="226">AGRI - AGRICULTURE</option>
+						<option value="227">AGRO - AGROALIMENTAIRE</option>
+						<option value="228">BATI - BATIMENT TRAVAUX PUBLICS</option>
+						<option value="229">COMM - COMMERCE</option>
+						<option value="230">CULT - CULTURE COMMUNICATION</option>
+						<option value="231">FORM - FORMATIONS GENERALES</option>
+						<option value="232">HOTE - HOTELLERIE TOURISME LOISIRS</option>
+						<option value="233">INDU - INDUSTRIE</option>
+						<option value="234">SANT - SANTE SOCIAL SOINS PERSONNELS</option>
+						<option value="235">SECU - SECURITE PROPRETE</option>
+						<option value="236">GEST - GESTION DE L'INFORMATION</option>
+						<option value="237">TRAN - TRANSPORT LOGISTIQUE</option>
+					</select>			      
+			      			      
 			    </div>
 			    
-			    <label for="status" class="col-md-2 control-label">Status</label>
-			    <div class="col-md-2">
-			      <input type="text" class="form-control" id="status" placeholder="Text input" />
+			    <label for="status" class="col-md-1 control-label">Status</label>
+			    <div class="col-md-3">
+					<select class="form-control" id="status">		
+						<option value=""></option>
+						<option value="31">En cours de construction</option>
+						<option value="32">Retenu mais à modifier</option>
+						<option value="33">Finalisé</option>
+						<option value="34">Abandon</option>
+						<option value="35">Transformé en marché</option>
+					</select>			      
 			    </div>
 			    
-			    <label for="campagne" class="col-md-2 control-label">Campagne</label>
-			    <div class="col-md-2">
-			      <input type="text" class="form-control" id="campagne" placeholder="Text input" />
+			    <label for="campagne" class="col-md-1 control-label">Campagne</label>
+			    <div class="col-md-3">			    
+					<select class="form-control" id="campagne">		
+						<option value=""></option>
+						<option value="222">16-1 MARCHES DE FORMATION 2016</option>
+						<option value="256">16-2 MARCHES DE FORMATION 2016</option>
+						<option value="283">16-3 MARCHES DE FORMATION 2016</option>				  
+					</select>			      
 			    </div>
 			    
 			  </div>
@@ -108,12 +139,67 @@
 			</form>
 		    
 		  </div>
-		</div>
+		<!-- /div -->
 		
-		<div class="panel panel-default">
-		  <div class="panel-body">
-		    Liste de lots
+		<!--  div class="panel panel-default" --> 
+		  <div class="panel-body">	    
 		    
+			<div class="table-responsive">
+			  <table class="table">
+				<tr>
+					<th>Dom. Prof.</th>
+					<th>Type Achat</th>
+					<th>Libelle</th>
+					<th>Aire de Mise Oeuvre</th>
+					<th>Stagiaires</th>
+					<th>Heure/An</th>
+					<th>Campagne</th>
+					<th>Status</th>															
+				</tr>
+
+				<tr>
+					<td></td>
+					<td></td>		
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>													
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>		
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>													
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>		
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>													
+				</tr>
+				<tr>
+					<td></td>
+					<td></td>		
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>					
+					<td></td>
+					<td></td>													
+				</tr>
+
+			  </table>
+			</div>
 		    
 		    
 			<nav class="pull-right">
@@ -168,3 +254,8 @@
     <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
   </body>
 </html>
+
+<!-- 
+<table cellpadding="0" cellspacing="0" class="obj" style="width: 1160px; table-layout: fixed;"><tbody><tr style="height: auto;"><th style="height: 0px; width: 80px;"></th><th style="height: 0px; width: 60px;"></th><th style="height: 0px; width: 50px;"></th><th style="height: 0px; width: 317px;"></th><th style="height: 0px; width: 70px;"></th><th style="height: 0px; width: 180px;"></th><th style="height: 0px; width: 50px;"></th><th style="height: 0px; width: 50px;"></th><th style="height: 0px; width: 50px;"></th><th style="height: 0px; width: 50px;"></th><th style="height: 0px; width: 70px;"></th><th style="height: 0px; width: 80px;"></th><th style="height: 0px; width: 53px;"></th></tr><tr class=" ligneListePaire"><td align="center" valign="middle">SANT</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">165</td><td align="left" valign="middle">AGENT DE STERILISATION EN MILIEU HOSPITALIER</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('AGENT STERILISATION EN MILIEU HOSPITALIER','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-COMMUNE DE TOULOUSE</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">12</td><td align="center" valign="middle">5544</td><td align="left" valign="middle">09/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=165"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=165"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListeImpaire"><td align="center" valign="middle">TRAN</td><td align="center" valign="middle">PD</td><td align="center" valign="middle">93</td><td align="left" valign="middle">PARCOURS DIPLOMANTS METIERS DU TRANSPORT</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('PERMIS C FIMO,PERMIS D FIMO,PREQUALIFICATION METIERS DU TRANSPORT,TITRE PROFESSIONNEL CONDUCTEUR DU TRANSPORT ROUTIER DE MARCHANDISES','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">81-ARRONDISSEMENT DE CASTRES</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">24</td><td align="center" valign="middle">13800</td><td align="left" valign="middle">01/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=93"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=93"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListePaire"><td align="center" valign="middle">FORM</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">253</td><td align="left" valign="middle">PREPARATION A DIVERS CAP</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('PREPARATION A DIVERS CAP ','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">82-TARN ET GARONNE</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">12</td><td align="center" valign="middle">12000</td><td align="left" valign="middle">09/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=253"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=253"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListeImpaire"><td align="center" valign="middle">FORM</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">108</td><td align="left" valign="middle">FORMATION LANGUE DES SIGNES FRANCAISE</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('FORMATION LANGUE DES SIGNES FRANCAISE','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-COMMUNE DE TOULOUSE,31-COURONNE TOULOUSAINE EST,31-COURONNE TOULOUSAINE NORD,31-COURONNE TOULOUSAINE OUEST,31-COURONNE TOULOUSAINE SUD</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">9</td><td align="center" valign="middle">4860</td><td align="left" valign="middle">09/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=108"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=108"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListePaire"><td align="center" valign="middle">GEST</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">268</td><td align="left" valign="middle">ASSISTANT(E) COMMERCIALE</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('ASSISTANT(E) COMMERCIALE','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">09-ARRONDISSEMENT DE FOIX</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">12</td><td align="center" valign="middle">6480</td><td align="left" valign="middle">09/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">CONS</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=268"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=268"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListeImpaire"><td align="center" valign="middle">HOTE</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">148</td><td align="left" valign="middle">ANIMATEUR LOISIRS TOUS PUBLICS</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('ANIMATEUR LOISIRS TOUS PUBLICS','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-COMMUNE DE TOULOUSE,31-COURONNE TOULOUSAINE EST,31-COURONNE TOULOUSAINE NORD,31-COURONNE TOULOUSAINE OUEST,31-COURONNE TOULOUSAINE SUD</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">16</td><td align="center" valign="middle">29760</td><td align="left" valign="middle">01/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=148"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=148"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListePaire"><td align="center" valign="middle">FORM</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">111</td><td align="left" valign="middle">PREPARATION A DIVERS TITRES PROFESSIONNELS - Niveau V</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('PREPARATION A DIVERS TITRES PROFESSIONNELS - Niveau V','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">32-ARRONDISSEMENT D'AUCH</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">10</td><td align="center" valign="middle">10370</td><td align="left" valign="middle">09/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=111"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=111"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListeImpaire"><td align="center" valign="middle">FORM</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">110</td><td align="left" valign="middle">PREPARATION A DIVERS TITRES PROFESSIONNELS - Niveau V</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('PREPARATION A DIVERS TITRES PROFESSIONNELS - Niveau V','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-COMMUNE DE TOULOUSE</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">18</td><td align="center" valign="middle">16110</td><td align="left" valign="middle">01/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=110"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=110"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListePaire"><td align="center" valign="middle">CULT</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">30</td><td align="left" valign="middle">SONORISATION DE SPECTACLES</td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('SONORISATION DE SPECTACLES','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-COMMUNE DE TOULOUSE,31-COURONNE TOULOUSAINE EST,31-COURONNE TOULOUSAINE NORD,31-COURONNE TOULOUSAINE OUEST,31-COURONNE TOULOUSAINE SUD</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">12</td><td align="center" valign="middle">6564</td><td align="left" valign="middle">01/2016</td><td align="center" valign="middle">16-1 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=30"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=30"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr><tr class=" ligneListeImpaire"><td align="center" valign="middle">GEST</td><td align="center" valign="middle">AQ</td><td align="center" valign="middle">312</td><td align="left" valign="middle">PARCOURS IMMOBILIER : NEGOCIATEUR/GESTIONNAIRE </td><td align="center" valign="middle"><span onmouseover="javascript:overlibAide('PARCOURS IMMOBILIER : NEGOCIATEUR/GESTIONNAIRE ','')" onmouseout="nd()"><img src="/coform_rmp/img/loupe.png"></span></td><td align="center" valign="middle">31-AIRE DE TOULOUSE</td><td align="center" valign="middle">&nbsp;</td><td align="center" valign="middle">15</td><td align="center" valign="middle">4140</td><td align="left" valign="middle">01/2016</td><td align="center" valign="middle">16-2 MARCHES DE FORMATION 2016</td><td align="center" valign="middle">FIN</td><td align="center" valign="middle"><a href="/coform_rmp/formation/reponse.do?dispatchMethod=visualise&amp;actfId=312"><img title="Visualiser la réponse" src="/coform_rmp/img/view.png"></a>&nbsp;<a href="/coform_rmp/formation/reponse.do?actfId=312"><img title="Modifier la réponse" src="/coform_rmp/img/modify.png"></a></td></tr></tbody></table>
+
+ -->
