@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <meta charset="utf-8"></meta>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
@@ -19,60 +19,9 @@
   </head>
   <body>
 
-	<div th:replace="templates/fragments/header :: header">
+	<div th:replace="fragments/header :: header">
 		Header
 	</div>
-
-	<!-- div class="container">
-	
-		<div class="row">
-		
-			<div class="col-md-6 text-left">
-				<h1>EOLE <small>P-Form</small></h1>
-			</div>
-			
-		    <div class="col-md-6 text-right">
-				<h1>Région de la campagne</h1>
-			</div>
-
-		</div>
-	
-		<nav class="navbar navbar-default" role="navigation">
-		
-		  <div class="container-fluid">
-		  
-		    <div class="navbar-header">
-		      <a class="navbar-brand" href="#" style="padding: 10px 0 0 10px">
-		      	<img class="img-responsive" alt="Logo P-Form" src="/images/logo-p-form.png" width="30px" height="30px" />
-		      </a>
-		    </div>
-		    
-		    <ul class="nav navbar-nav">
-
-		      <li class="dropdown">
-		        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Gestion des Lots<b class="caret"></b></a>
-		        <ul class="dropdown-menu">
-		          <li><a href="#">Créer un lot</a></li>
-		          <li><a href="#">Rechercher un lot</a></li>
-		          <li class="divider"></li>
-		          <li><a href="#">Créer un Modèle</a></li>
-		        </ul>
-		      </li>
-		      
-			<li><a href="#">Budget</a></li>
-
-		    </ul>
-		    
-		    <ul class="nav navbar-nav navbar-right">
-		      <li><a href="#"><span class="glyphicon glyphicon-user"></span> Xavier Gouardes</a></li>
-		      <li><a href="#"><span class="glyphicon glyphicon-log-in"></span>Logout</a></li>
-		    </ul>	  
-		      
-		  </div>
-		
-		</nav>
-		
-	</div -->
 	
 	<div class="container" id="content">
 		<h2>Liste de Lots Test A</h2>
@@ -246,6 +195,10 @@
 	    </div>
 	  -->
 	
+	</div>
+
+	<div th:replace="fragments/footer :: footer">
+		Footer
 	</div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->

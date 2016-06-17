@@ -17,4 +17,9 @@ public class LotController
     }
 
     
+	@RequestMapping(value="/header", method=RequestMethod.GET)
+    public String displayHeader(Model model) {
+        model.addAttribute("test", "test");
+        return "fragments/header";
+    }	
 }
