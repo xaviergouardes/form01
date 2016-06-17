@@ -7,10 +7,10 @@ import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
-public class TestController 
+public class LotController 
 {
 
-	@RequestMapping(value="/test", method=RequestMethod.GET)
+	@RequestMapping(value="/lots", method=RequestMethod.GET)
     public String greetingForm(Model model) {
         model.addAttribute("test", "test");
         return "index";
