@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+  <head>
+    <meta charset="utf-8"></meta>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+    <title>P-Form</title>
+
+    <!-- Bootstrap -->
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
+
+    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+  </head>
+<body>
+
+	<div class="form-group" th:fragment="campagnes">
+
+		<label for="campagne" class="control-label">Campagne</label>
+		<select
+			class="form-control" id="campagne">
+			<option value=""></option>
+			<option value="222">16-1 MARCHES DE FORMATION 2016</option>
+			<option value="256">16-2 MARCHES DE FORMATION 2016</option>
+			<option value="283">16-3 MARCHES DE FORMATION 2016</option>
+		</select>
+
+	</div>
+
+	
+	<div class="form-group" th:fragment="status">
+
+		<label for="status" class="control-label">Status</label>
+		<select class="form-control" id="status">
+			<option value=""></option>
+			<option value="31">En cours de construction</option>
+			<option value="32">Retenu mais à modifier</option>
+			<option value="33">Finalisé</option>
+			<option value="34">Abandon</option>
+			<option value="35">Transformé en marché</option>
+		</select>
+
+	</div>
+
+</body>
+</html>

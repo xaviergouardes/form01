@@ -1,188 +1,161 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
-  <head>
-    <meta charset="utf-8"></meta>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
-    <meta name="viewport" content="width=device-width, initial-scale=1"></meta>
-    <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-    <title>P-Form</title>
+<head>
+<meta charset="utf-8"></meta>
+<meta http-equiv="X-UA-Compatible" content="IE=edge"></meta>
+<meta name="viewport" content="width=device-width, initial-scale=1"></meta>
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>P-Form</title>
 
-    <!-- Bootstrap -->
-    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" rel="stylesheet"></link>
+<!-- Bootstrap -->
+<link
+	href="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+	rel="stylesheet"></link>
 
-    <!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
-    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
-    <!--[if lt IE 9]>
+<!-- HTML5 shim and Respond.js for IE8 support of HTML5 elements and media queries -->
+<!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+<!--[if lt IE 9]>
       <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
-  </head>
-  <body>
+</head>
+<body>
 
-	<div th:replace="fragments/header :: header">
-		Header
-	</div>
-	
+	<div th:replace="fragments/header :: header">Header</div>
+
 	<div class="container" id="content">
 		<h2>Liste de Lots Test A</h2>
 
 		<div class="panel panel-default">
-		  <div class="panel-body">		    
+			<div class="panel-body">
 
-			<form class="form-horizontal">
-				
-			  <div class="form-group">
-			  
-			    <label for="domaineProfessionnel" class="col-md-1 control-label">Domaine Professionnel</label>
-			    <div class="col-md-3">
-					<select class="form-control" id="domaineProfessionnel">
-						<option value=""></option>
-						<option value="226">AGRI - AGRICULTURE</option>
-						<option value="227">AGRO - AGROALIMENTAIRE</option>
-						<option value="228">BATI - BATIMENT TRAVAUX PUBLICS</option>
-						<option value="229">COMM - COMMERCE</option>
-						<option value="230">CULT - CULTURE COMMUNICATION</option>
-						<option value="231">FORM - FORMATIONS GENERALES</option>
-						<option value="232">HOTE - HOTELLERIE TOURISME LOISIRS</option>
-						<option value="233">INDU - INDUSTRIE</option>
-						<option value="234">SANT - SANTE SOCIAL SOINS PERSONNELS</option>
-						<option value="235">SECU - SECURITE PROPRETE</option>
-						<option value="236">GEST - GESTION DE L'INFORMATION</option>
-						<option value="237">TRAN - TRANSPORT LOGISTIQUE</option>
-					</select>			      
-			      			      
-			    </div>
-			    
-			    <label for="status" class="col-md-1 control-label">Status</label>
-			    <div class="col-md-3">
-					<select class="form-control" id="status">		
-						<option value=""></option>
-						<option value="31">En cours de construction</option>
-						<option value="32">Retenu mais à modifier</option>
-						<option value="33">Finalisé</option>
-						<option value="34">Abandon</option>
-						<option value="35">Transformé en marché</option>
-					</select>			      
-			    </div>
-			    
-			    <label for="campagne" class="col-md-1 control-label">Campagne</label>
-			    <div class="col-md-3">			    
-					<select class="form-control" id="campagne">		
-						<option value=""></option>
-						<option value="222">16-1 MARCHES DE FORMATION 2016</option>
-						<option value="256">16-2 MARCHES DE FORMATION 2016</option>
-						<option value="283">16-3 MARCHES DE FORMATION 2016</option>				  
-					</select>			      
-			    </div>
-			    
-			  </div>
+				<form role="form">
+
+					<div class="raw"> 
+								
+						<div class="col-md-4">
+							<!--  div th:replace="fragments/components/listDomaineProfessionnel :: domainesProfessionnels">Liste Box domaine Professionnels</div> -->									
+							<div th:include="http://localhost:8080/referentiels/domaines-professionel :: div#domainesProfessionnels">Liste Box domaine Professionnels</div>											
+						</div>
+
+						<div class="col-md-4">
+						<div th:replace="fragments/components/statusLot :: status">Liste
+							Box status</div>
+						</div>
+						
+						<div class="col-md-4">
+						<div th:replace="fragments/components/campagnes :: campagnes">Liste
+							Box campagnes</div>
+						</div>
+						
+					</div>
 			
-			  <div class="form-group pull-right">
-			  	<div class="col-md-12">
-				  	<button type="submit" id="idBtnRechercher" class="btn btn-default" value="rechercher">
-	 					Rechercher
-					</button>
-				</div>
-			  </div>			
 			
-			</form>
-		    
-		  </div>
-		<!-- /div -->
-		
-		<!--  div class="panel panel-default" --> 
-		  <div class="panel-body">	    
-		    
-			<div class="table-responsive">
-			  <table class="table">
-				<tr>
-					<th>Dom. Prof.</th>
-					<th>Type Achat</th>
-					<th>Libelle</th>
-					<th>Aire de Mise Oeuvre</th>
-					<th>Stagiaires</th>
-					<th>Heure/An</th>
-					<th>Campagne</th>
-					<th>Status</th>															
-				</tr>
+					<div class="raw pull-right">
+						<div class="col-md-12">
+							<button type="submit" id="idBtnRechercher"
+								class="btn btn-default" value="rechercher">Rechercher</button>
+						</div>
+					</div>
 
-				<tr>
-					<td></td>
-					<td></td>		
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>													
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>		
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>													
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>		
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>													
-				</tr>
-				<tr>
-					<td></td>
-					<td></td>		
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>					
-					<td></td>
-					<td></td>													
-				</tr>
+				</form>
 
-			  </table>
 			</div>
-		    
-		    
-			<nav class="pull-right">
-			  <ul class="pagination">
-			    <li><a href="#" aria-label="Previous"><span aria-hidden="true">«</span></a></li>
-			    <li><a href="#">1 <span class="sr-only">(current)</span></a></li>
-			    <li class="active"><a href="#">2 </a></li>
-			    <li><a href="#">3 </a></li>
-			    <li><a href="#">4 </a></li>
-			    <li><a href="#">5 </a></li>
-			    <li><a href="#" aria-label="Next"><span aria-hidden="true">»</span></a></li>
-			  </ul>
-			</nav>
-			
-		  </div>
-		</div>		
-		
+			<!-- /div -->
+
+			<!--  div class="panel panel-default" -->
+			<div class="panel-body">
+
+				<div class="table-responsive">
+					<table class="table">
+						<tr>
+							<th>Dom. Prof.</th>
+							<th>Type Achat</th>
+							<th>Libelle</th>
+							<th>Aire de Mise Oeuvre</th>
+							<th>Stagiaires</th>
+							<th>Heure/An</th>
+							<th>Campagne</th>
+							<th>Status</th>
+						</tr>
+
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+						<tr>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+							<td></td>
+						</tr>
+
+					</table>
+				</div>
+
+
+				<nav class="pull-right">
+					<ul class="pagination">
+						<li><a href="#" aria-label="Previous"><span
+								aria-hidden="true">«</span></a></li>
+						<li><a href="#">1 <span class="sr-only">(current)</span></a></li>
+						<li class="active"><a href="#">2 </a></li>
+						<li><a href="#">3 </a></li>
+						<li><a href="#">4 </a></li>
+						<li><a href="#">5 </a></li>
+						<li><a href="#" aria-label="Next"><span
+								aria-hidden="true">»</span></a></li>
+					</ul>
+				</nav>
+
+			</div>
+		</div>
+
 		<div class="panel panel-default">
-		  <div class="panel-body">
-		    Barre de Boutons
-		  </div>
-		</div>	
+			<div class="panel-body">Barre de Boutons</div>
+		</div>
 
 	</div>
 
-	<div th:replace="fragments/footer :: footer">
-		Footer
-	</div>
+	<div th:replace="fragments/footer :: footer">Footer</div>
 
-    <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
-    <!-- Include all compiled plugins (below), or include individual files as needed -->
-    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-  </body>
+	<!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+	<script
+		src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<!-- Include all compiled plugins (below), or include individual files as needed -->
+	<script
+		src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+</body>
 </html>
 
 <!-- 
